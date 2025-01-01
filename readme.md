@@ -3,7 +3,7 @@
 This project is a template of HTML and CSS for an admin content management system.
 
 ## Admin Demo
-Open demo Admin on [Admin CMS Html](https://baguspanji.github.io/admin-cms-html/basic-admin/index.html)
+Open demo Admin on [Admin CMS Html](https://baguspanji.github.io/admin-cms-html)
 
 
 ## Features
