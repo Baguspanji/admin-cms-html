@@ -120,16 +120,13 @@ button {
     opacity: 0;
 }
 
-.sidebar .sidebar-header .sidebar-toggler {
+.sidebar .sidebar-header .sidebar-toggle {
     font-size: 1.3rem;
-    transform: rotate(135deg);
     color: var(--primary);
 }
 
-@media (min-width: 992px) {
-    .sidebar .sidebar-toggler {
-        display: none;
-    }
+.sidebar.sidebar-mini .sidebar-header .sidebar-toggle {
+    display: none;
 }
 
 .sidebar .sidebar-menu {
@@ -239,6 +236,7 @@ button {
 
 main {
     padding: 11px 15px;
+    margin-left: 250px;
     transition: 0.5s all ease-out;
 }
 
@@ -248,9 +246,9 @@ main {
 }
 
 /* main when .sidebar.sidebar-mini */
-.sidebar+main {
+/* .sidebar+main {
     margin-left: 250px;
-}
+} */
 
 /* Navbar */
 
@@ -269,14 +267,8 @@ main {
     box-shadow: none;
 }
 
-.navbar .sidebar-toggler {
-    width: 60px;
-    font-size: 1.3rem;
-    color: var(--primary);
-}
-
 .navbar .navbar-content {
-    width: calc(100% - 60px);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -293,6 +285,7 @@ main {
 .navbar .navbar-content .navbar-search {
     display: inline;
     width: 26rem;
+    margin-left: 8px;
 }
 
 .navbar .navbar-content .navbar-search .form-control {
@@ -408,6 +401,10 @@ main {
     background: linear-gradient(-90deg, #4CAF50 0%, #388E3C 100%);
 }
 
+.content-chart {
+    height: 400px;
+}
+
 .content-chart .content-chart-title {
     display: flex;
     align-items: center;
@@ -431,11 +428,54 @@ main {
     margin-left: auto;
 }
 
+.content-tabs {
+    width: 100%;
+    padding: 0.45rem 0.45rem;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.45rem;
+    border-radius: var(--bs-border-radius);
+}
+
+.content-tabs .content-tab {
+    flex: 0 1 auto;
+    width: 100%;
+    padding: 0.2rem 1rem;
+    background-color: transparent;
+    color: var(--secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s all;
+}
+
+.content-tabs .content-tab.active {
+    background-color: #fff;
+    color: var(--default-text-color);
+    border-radius: var(--bs-border-radius);
+    box-shadow: 0px 0px 22px -4px rgba(0, 0, 0, 0.15);
+}
+
+.content-update {
+    height: 400px;
+    padding-bottom: 0.85rem;
+}
+
 .content-update-list {
     margin-top: 0.85rem;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
+    height: calc(400px - 5.95rem);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.content-update-list::-webkit-scrollbar {
+    display: none;
 }
 
 .content-update-list .content-update-item {
@@ -445,6 +485,7 @@ main {
 
 .content-update-list .content-update-item:last-child {
     border-bottom: none;
+    margin-bottom: 36px;
 }
 
 .content-update-list .content-update-item h5 {
@@ -463,6 +504,11 @@ main {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--secondary);
+}
+
+.content-update-list .content-update-item .content-update-item-date i {
+    font-size: 0.8rem;
+    margin-right: 4px;
 }
 
 /* Custom Component */
@@ -592,6 +638,12 @@ main {
     box-shadow: none;
 }
 
+.card .card-body .card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .tooltip {
     margin-bottom: -8px !important;
 }
@@ -605,4 +657,45 @@ main {
 
 .tooltip-arrow {
     display: none !important;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table.table-sm {
+    font-size: 0.875rem;
+}
+
+.table thead th {
+    background-color: #f8fafc;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.table thead tr th:first-child {
+    border-top-left-radius: var(--bs-border-radius);
+    padding-left: 12px;
+}
+
+.table thead tr th:last-child {
+    border-top-right-radius: var(--bs-border-radius);
+    padding-right: 12px;
+}
+
+.table tbody tr td:first-child {
+    padding-left: 12px;
+}
+
+.table tbody tr td:last-child {
+    padding-right: 12px;
+}
+
+.badge {
+    border-radius: var(--bs-border-radius-item);
+}
+
+.ti {
+    font-size: 1.2rem;
 }

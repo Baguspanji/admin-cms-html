@@ -15,53 +15,57 @@
 
     <!-- Boostrap CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Boostrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Tabler Icon -->
+    <link href="assets/css/tabler-icons.min.css" rel="stylesheet">
+    <link href="assets/css/tabler-icons-filled.min.css" rel="stylesheet">
+    <link href="assets/css/tabler-icons-outline.min.css" rel="stylesheet">
     <!-- ApexChartsCss -->
     <link href="assets/css/apexcharts.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="assets/css/app.css" rel="stylesheet">
 
     <!-- Boostrap JS -->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <!-- jquery -->
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
     <!-- ApexCharts JS -->
     <script src="assets/js/apexcharts.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/app.js"></script>
+    <!-- jquery -->
+    <!-- <script src="assets/js/jquery-3.5.1.min.js"></script> -->
 </head>
 
 <body>
+    <!-- get sidebar.html -->
+    <!-- <div include-html="sidebar.html"></div> -->
+
     <!-- Start Sidebar -->
     <div class="sidebar" id="sidebar" sidebar-mode-mini="false">
         <div class="sidebar-header">
             <a href="#" class="sidebar-brand"><img src="assets/img/logo.svg" alt="Logo"></a>
             <a href="#" class="sidebar-brand-mini"><img src="assets/img/logo-mini.svg" alt="Logo"></a>
-            <button class="sidebar-toggler" id="sidebar-toggler">
-                <i class="bi bi-escape"></i>
+            <button type="button" class="sidebar-toggle" id="sidebar-toggle">
+                <i class="ti ti-layout-sidebar-right-expand"></i>
             </button>
         </div>
 
         <ul class="sidebar-menu">
             <li class="sidebar-link">
                 <a href="#" class="sidebar-item">
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="ti ti-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="sidebar-link">
                 <a href="#" class="sidebar-item active">
-                    <i class="bi bi-person-fill"></i>
+                    <i class="ti ti-user"></i>
                     <span>Users</span>
                 </a>
             </li>
             <li class="sidebar-link">
                 <a href="javascript:void(0)" class="sidebar-item sub-item collapsed" data-bs-toggle="collapse"
                     data-bs-target="#menu-collapse">
-                    <i class="bi bi-file-earmark-text-fill"></i>
+                    <i class="ti ti-box-multiple"></i>
                     <span>Pages</span>
                 </a>
                 <ul class="collapse" id="menu-collapse">
@@ -79,7 +83,7 @@
             <li class="sidebar-link">
                 <a href="javascript:void(0)" class="sidebar-item sub-item collapsed" data-bs-toggle="collapse"
                     data-bs-target="#components-collapse">
-                    <i class="bi bi-list-nested"></i>
+                    <i class="ti ti-stack-back"></i>
                     <span>Components</span>
                 </a>
                 <ul class="collapse" id="components-collapse">
@@ -96,7 +100,7 @@
             </li>
             <li class="sidebar-link">
                 <a href="#" class="sidebar-item">
-                    <i class="bi bi-gear-fill"></i>
+                    <i class="ti ti-settings"></i>
                     <span>Settings</span>
                 </a>
             </li>
@@ -105,17 +109,17 @@
     <!-- End Sidebar -->
 
     <main>
+        <!-- get navbar.html -->
+        <!-- <div include-html="navbar.html"></div> -->
+
         <!-- Start Navbar -->
         <nav class="navbar navbar-expand-lg">
-            <button class="sidebar-toggler">
-                <i class="bi bi-list"></i>
-            </button>
             <div class="navbar-content" id="navbarNav">
                 <div class="navbar-nav">
                     <div class="navbar-search">
                         <div class="custom-input-group">
                             <div class="input-group-prefix">
-                                <i class="bi bi-search"></i>
+                                <i class="ti ti-search"></i>
                             </div>
                             <input type="search" placeholder="Search" class="form-control">
                         </div>
@@ -128,7 +132,7 @@
                         <div class="dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <i class="bi bi-bell"></i>
+                                <i class="ti ti-bell"></i>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
@@ -186,7 +190,7 @@
                     <div class="content-title">
                         <div class="content-title-badge">
                             <div class="content-title-icon">
-                                <i class="bi bi-grid-fill"></i>
+                                <i class="ti ti-dashboard"></i>
                             </div>
                             <div class="content-title-text">
                                 <h5>Dashboard</h5>
@@ -202,7 +206,7 @@
                             <option value="year">This Year</option>
                         </select>
 
-                        <button class="btn btn-primary"><i class="bi bi-cloud-arrow-down"></i> Export</button>
+                        <button class="btn btn-primary"><i class="ti ti-cloud-down"></i> Export</button>
                     </div>
                 </div>
 
@@ -246,7 +250,7 @@
                                     <button type="button" class="btn btn-tooltip" data-bs-toggle="tooltip"
                                         data-bs-placement="top" data-bs-custom-class="custom-tooltip"
                                         data-bs-title="This is a Analitycs of Order">
-                                        <i class="bi bi-info-circle"></i>
+                                        <i class="ti ti-info-circle"></i>
                                     </button>
 
                                     <div class="dropdown">
@@ -263,7 +267,7 @@
                                     </div>
                                 </div>
 
-                                <canvas id="myChart"></canvas>
+                                <div id="myChart"></div>
                             </div>
                         </div>
                     </div>
@@ -277,57 +281,151 @@
                                 <div class="content-update-title">
                                     <h5>Whats new on this week</h5>
                                 </div>
-                            </div>
 
-                            <div class="btn-group btn-group-toggle w-100 mt-3" data-toggle="buttons">
-                                <label class="btn btn-outline-default">
-                                    All
-                                </label>
-                                <label class="btn btn-outline-default active">
-                                    Treding
-                                </label>
-                                <label class="btn btn-outline-default">
-                                    Popular
-                                </label>
-                            </div>
+                                <div class="content-tabs w-100 mt-3" data-toggle="content-tabs">
+                                    <button type="button" class="content-tab">
+                                        All
+                                    </button>
+                                    <button type="button" class="content-tab active">
+                                        Treding
+                                    </button>
+                                    <button type="button" class="content-tab">
+                                        Popular
+                                    </button>
+                                </div>
 
-                            <div class="content-update-list">
-                                <div class="content-update-item">
-                                    <div class="content-update-item-text">
-                                        <h5>Lorem ipsum dolor sit.</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-                                            labore.</span>
-                                        <div class="content-update-item-date">
-                                            <span>12</span>
-                                            <span>Jan</span>
+                                <div class="content-update-list">
+                                    <div class="content-update-item">
+                                        <div class="content-update-item-text">
+                                            <h5>Lorem ipsum dolor sit.</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
+                                                labore.</span>
+                                            <div class="content-update-item-date">
+                                                <i class="ti ti-calendar"></i>
+                                                <span>12</span>
+                                                <span>Jan</span>
+                                                <span>2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-update-item">
+                                        <div class="content-update-item-text">
+                                            <h5>Lorem ipsum dolor sit.</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
+                                                labore.</span>
+                                            <div class="content-update-item-date">
+                                                <i class="ti ti-calendar"></i>
+                                                <span>12</span>
+                                                <span>Jan</span>
+                                                <span>2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-update-item">
+                                        <div class="content-update-item-text">
+                                            <h5>Lorem ipsum dolor sit.</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
+                                                labore.</span>
+                                            <div class="content-update-item-date">
+                                                <i class="ti ti-calendar"></i>
+                                                <span>12</span>
+                                                <span>Jan</span>
+                                                <span>2024</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-update-item">
+                                        <div class="content-update-item-text">
+                                            <h5>Lorem ipsum dolor sit.</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
+                                                labore.</span>
+                                            <div class="content-update-item-date">
+                                                <i class="ti ti-calendar"></i>
+                                                <span>12</span>
+                                                <span>Jan</span>
+                                                <span>2024</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="content-update-item">
-                                    <div class="content-update-item-text">
-                                        <h5>Lorem ipsum dolor sit.</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-                                            labore.</span>
-                                        <div class="content-update-item-date">
-                                            <span>12</span>
-                                            <span>Jan</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="content-update-item">
-                                    <div class="content-update-item-text">
-                                        <h5>Lorem ipsum dolor sit.</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-                                            labore.</span>
-                                        <div class="content-update-item-date">
-                                            <span>12</span>
-                                            <span>Jan</span>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Orders -->
+                <div class="col-12 mt-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>Orders</h5>
+
+                                <a href="#" class="btn btn-outline-default">
+                                    View All
+                                </a>
+                            </div>
+
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary">OD-002412001</a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>Apple Watch</td>
+                                        <td>$ 250</td>
+                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary">OD-002412002</a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>Apple Watch</td>
+                                        <td>$ 250</td>
+                                        <td class="text-center"><span class="badge bg-warning">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary">OD-002412003</a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>Apple Watch</td>
+                                        <td>$ 250</td>
+                                        <td class="text-center"><span class="badge bg-danger">Canceled</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary">OD-002412004</a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>Apple Watch</td>
+                                        <td>$ 250</td>
+                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="text-primary">OD-002412005</a>
+                                        </td>
+                                        <td>John Doe</td>
+                                        <td>Apple Watch</td>
+                                        <td>$ 250</td>
+                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -340,13 +438,13 @@
         var options = {
             series: [{
                 name: 'Net Profit',
-                data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+                data: [44, 55, 57, 56]
             }, {
                 name: 'Revenue',
-                data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+                data: [76, 85, 101, 98]
             }, {
                 name: 'Free Cash Flow',
-                data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+                data: [35, 41, 36, 26]
             }],
             chart: {
                 type: 'bar',
@@ -356,7 +454,7 @@
                 bar: {
                     horizontal: false,
                     columnWidth: '55%',
-                    borderRadius: 5,
+                    borderRadius: 2,
                     borderRadiusApplication: 'end'
                 },
             },
@@ -369,7 +467,7 @@
                 colors: ['transparent']
             },
             xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
             },
             yaxis: {
                 title: {
@@ -387,10 +485,9 @@
                 }
             }
         };
-
         var chart = new ApexCharts(document.querySelector("#myChart"), options);
 
-        $(document).ready(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             chart.render();
         });
     </script>
