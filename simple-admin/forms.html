@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- Boostrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ApexChartsCss -->
+    <link href="assets/css/apexcharts.css" rel="stylesheet">
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <!-- Flatpikr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Custom CSS -->
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <!-- Boostrap JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- ApexCharts JS -->
+    <script src="assets/js/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/app.js"></script>
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Flatpickr Indo -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/id.js"></script>
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <img src="assets/img/logo.svg" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="sidebar-link">
+                <a href="index.html" class="sidebar-item">
+                    <i class='bx bxs-dashboard'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class='bx bxs-bar-chart-alt-2'></i>
+                    <span>Analitycs</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class='bx bxs-credit-card'></i>
+                    <span>Cards</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="transactions.html" class="sidebar-item">
+                    <i class='bx bxs-wallet'></i>
+                    <span>Transaction</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class="bx bxs-user"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="javascript:void(0)" class="sidebar-item sub-item collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#menu-collapse">
+                    <i class="bx bxs-box"></i>
+                    <span>Pages</span>
+                </a>
+                <ul class="collapse" id="menu-collapse">
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Home</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link active">About</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Services</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-link">
+                <a href="javascript:void(0)" class="sidebar-item sub-item collapsed active" data-bs-toggle="collapse"
+                    data-bs-target="#components-collapse">
+                    <i class="bx bxs-component"></i>
+                    <span>Components</span>
+                </a>
+                <ul class="collapse" id="components-collapse">
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Buttons</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="forms.html" class="sidebar-subitem-link">Forms</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Tables</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End Sidebar -->
+
+    <main>
+        <!-- Start Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content" id="navbarNav">
+                <div class="navbar-nav">
+                    <!-- Input Search -->
+                    <div class="navbar-search">
+                        <div class="custom-input-group">
+                            <div class="input-group-prefix">
+                                <i class='bx bx-search-alt-2'></i>
+                            </div>
+                            <input type="search" placeholder="Search" class="form-control">
+                        </div>
+                    </div>
+                    <!-- Button Toggle -->
+                    <button class="sidebar-toggle" id="sidebar-toggle">
+                        <i class="bx bx-menu"></i>
+                    </button>
+                </div>
+
+                <ul class="navbar-nav">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown notification-dropdown">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">
+                                <i class="bx bxs-bell"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown profile-dropdown">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">
+                                <img src="assets/img/avatars/user.png" alt="Avatar" class="avatar">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="dropdown-item">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Start Content -->
+        <div class="content">
+            <div class="row">
+                <!-- Content Title -->
+                <div class="col-md-12 mt-2">
+                    <div class="content-title">
+                        <div class="content-title-badge">
+                            <div class="content-title-icon">
+                                <i class='bx bxs-file'></i>
+                            </div>
+                            <div class="content-title-text">
+                                <h5>Forms</h5>
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Transaction -->
+                <div class="col-12 mt-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h5>Form Input</h5>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-text" class="form-label">Label Text</label>
+                                    <input type="text" class="form-control" id="input-text"
+                                        placeholder="Type something...">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-email" class="form-label required">Label Required</label>
+                                    <input type="email" class="form-control" id="input-email">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-password" class="form-label">Label Password</label>
+                                    <input type="password" class="form-control" id="input-password">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-password" class="form-label">Label Re Password</label>
+                                    <input type="password" class="form-control" id="input-password">
+                                </div>
+
+                                <!-- Text area -->
+                                <div class="col-12 mb-2">
+                                    <label for="input-textarea" class="form-label">Label Textarea</label>
+                                    <textarea class="form-control" id="input-textarea" rows="3"
+                                        placeholder="Type something..."></textarea>
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-text" class="form-label">Disable</label>
+                                    <input type="text" class="form-control" id="input-text"
+                                        placeholder="Type something..." disabled>
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-text" class="form-label">Readonly</label>
+                                    <input type="text" class="form-control" id="input-text"
+                                        placeholder="Type something..." readonly>
+                                </div>
+
+                                <!-- prefix -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-text" class="form-label">Prefix</label>
+                                    <div class="custom-input-group">
+                                        <span class="input-group-prefix">
+                                            <i class="bx bx-user"></i>
+                                        </span>
+                                        <input type="text" class="form-control" id="input-text"
+                                            placeholder="Type something...">
+                                    </div>
+                                </div>
+
+                                <!-- suffix -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-text" class="form-label">Suffix</label>
+                                    <div class="custom-input-group">
+                                        <input type="text" class="form-control" id="input-text"
+                                            placeholder="Type something...">
+                                        <span class="input-group-suffix">
+                                            <i class="bx bx-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- select -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-select" class="form-label">Select</label>
+                                    <select class="form-select" id="input-select">
+                                        <option selected>Select...</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+
+                                <!-- select2 -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-select2" class="form-label">Select2</label>
+                                    <select class="form-select" id="input-select2">
+                                        <option selected>Select...</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                    </select>
+                                </div>
+
+                                <!-- checkbox -->
+                                <div class="col-12 col-md-4 mb-2">
+                                    <label class="form-label" for="input-radio">Checkbox</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Default checkbox
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                            checked>
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            Checked checkbox
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- radio -->
+                                <div class="col-12 col-md-4 mb-2">
+                                    <label class="form-label" for="input-radio">Radio</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Default radio
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Default checked radio
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- switch -->
+                                <div class="col-12 col-md-4 mb-2">
+                                    <label class="form-label" for="input-switch">Switch</label>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" role="switch"
+                                            id="flexSwitchCheckDefault">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch
+                                            checkbox input</label>
+                                    </div>
+                                </div>
+
+                                <!-- datepicker -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-date" class="form-label">Date</label>
+                                    <input type="date" class="form-control" id="input-date">
+                                </div>
+
+                                <!-- timepicker -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-time" class="form-label">Time</label>
+                                    <input type="time" class="form-control" id="input-time">
+                                </div>
+
+                                <!-- flatpickr date -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-flatpickr" class="form-label">Flatpickr Date</label>
+                                    <input type="text" class="form-control" id="input-flatpickr">
+                                </div>
+
+                                <!-- flatpickr time -->
+                                <div class="col-12 col-md-6 mb-2">
+                                    <label for="input-flatpickr-time" class="form-label">Flatpickr Time</label>
+                                    <input type="text" class="form-control" id="input-flatpickr-time">
+                                </div>
+
+                                <!-- file -->
+                                <div class="col-12 mb-2">
+                                    <label for="input-file" class="form-label">File</label>
+                                    <input class="form-control" type="file" id="input-file">
+                                </div>
+
+                                <!-- File Drow & Browse -->
+                                <div class="col-12 mb-4">
+                                    <label for="input-file" class="form-label">File Drag & Browse</label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Drop or<button type="button"
+                                                class="custom-file-btn"
+                                                onclick="document.getElementById('customFile').click()">
+                                                Browse</button>
+                                        </label>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+    </main>
+
+    <script>
+        $(document).ready(function () {
+            $('#input-select2').select2({
+                theme: 'bootstrap-5'
+            });
+
+            $('#input-flatpickr').flatpickr({
+                enableTime: false,
+                dateFormat: "Y-m-d",
+                defaultDate: "today",
+                locale: "id"
+            });
+
+            $('#input-flatpickr-time').flatpickr({
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                defaultDate: "12:00",
+                locale: "id"
+            });
+        });
+    </script>
+</body>
+
+</html>

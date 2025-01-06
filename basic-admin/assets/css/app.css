@@ -296,6 +296,11 @@ main {
     display: none !important;
 }
 
+.navbar .navbar-content .dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
 .navbar .navbar-content .notification-dropdown .dropdown-toggle {
     width: 34px;
     height: 34px;
@@ -304,6 +309,10 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.navbar .navbar-content .notification-dropdown .dropdown-menu {
+    margin-top: 8px;
 }
 
 .navbar .navbar-content .profile-dropdown img {

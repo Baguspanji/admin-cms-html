@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Admin</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- Boostrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ApexChartsCss -->
+    <link href="assets/css/apexcharts.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <!-- Boostrap JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- ApexCharts JS -->
+    <script src="assets/js/apexcharts.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/app.js"></script>
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <!-- Start Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-brand">
+                <img src="assets/img/logo.svg" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="sidebar-link">
+                <a href="index.html" class="sidebar-item">
+                    <i class='bx bxs-dashboard'></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class='bx bxs-bar-chart-alt-2'></i>
+                    <span>Analitycs</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class='bx bxs-credit-card'></i>
+                    <span>Cards</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="transactions.html" class="sidebar-item active">
+                    <i class='bx bxs-wallet'></i>
+                    <span>Transaction</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class="bx bxs-user"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="sidebar-link">
+                <a href="javascript:void(0)" class="sidebar-item sub-item collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#menu-collapse">
+                    <i class="bx bxs-box"></i>
+                    <span>Pages</span>
+                </a>
+                <ul class="collapse" id="menu-collapse">
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Home</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link active">About</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Services</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-link">
+                <a href="javascript:void(0)" class="sidebar-item sub-item collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#components-collapse">
+                    <i class="bx bxs-component"></i>
+                    <span>Components</span>
+                </a>
+                <ul class="collapse" id="components-collapse">
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Buttons</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="forms.html" class="sidebar-subitem-link">Forms</a>
+                    </li>
+                    <li class="sidebar-subitem">
+                        <a href="#" class="sidebar-subitem-link">Tables</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="sidebar-link">
+                <a href="#" class="sidebar-item">
+                    <i class="bx bxs-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End Sidebar -->
+
+    <main>
+        <!-- Start Navbar -->
+        <nav class="navbar">
+            <div class="navbar-content" id="navbarNav">
+                <div class="navbar-nav">
+                    <!-- Input Search -->
+                    <div class="navbar-search">
+                        <div class="custom-input-group">
+                            <div class="input-group-prefix">
+                                <i class='bx bx-search-alt-2'></i>
+                            </div>
+                            <input type="search" placeholder="Search" class="form-control">
+                        </div>
+                    </div>
+                    <!-- Button Toggle -->
+                    <button class="sidebar-toggle" id="sidebar-toggle">
+                        <i class="bx bx-menu"></i>
+                    </button>
+                </div>
+
+                <ul class="navbar-nav">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown notification-dropdown">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">
+                                <i class="bx bxs-bell"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Notification 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Profile dropdown -->
+                    <li class="nav-item dropdown profile-dropdown">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button">
+                                <img src="assets/img/avatars/user.png" alt="Avatar" class="avatar">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#" class="dropdown-item">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Start Content -->
+        <div class="content">
+            <div class="row">
+                <!-- Content Title -->
+                <div class="col-md-12 mt-2">
+                    <div class="content-title">
+                        <div class="content-title-badge">
+                            <div class="content-title-icon">
+                                <i class='bx bxs-wallet'></i>
+                            </div>
+                            <div class="content-title-text">
+                                <h5>Transactions</h5>
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary">
+                            <i class='bx bxs-plus-circle'></i> Add Transaction
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Table Transaction -->
+                <div class="col-12 mt-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <div></div>
+                                <input type="search" name="table-search" id="table-search" class="form-control table-search"
+                                    placeholder="Search Transaction">
+                            </div>
+
+                            <table class="table table-sm" id="table-transactions">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <div class="card-footer d-flex justify-content-between align-content-center">
+                                <div class="table-pagination-info">
+                                    <span>Showing 1 to 10 of 10 entries</span>
+                                </div>
+                                <div class="table-pagination">
+                                    <nav>
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">
+                                                    <i class='bx bx-chevron-left'></i>
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link active">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">
+                                                    <i class='bx bx-chevron-right'></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+    </main>
+
+    <script>
+        const transactions = [
+            {
+                orderId: 'OD-002412001',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            },
+            {
+                orderId: 'OD-002412002',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Pending'
+            },
+            {
+                orderId: 'OD-002412003',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Canceled'
+            },
+            {
+                orderId: 'OD-002412004',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            },
+            {
+                orderId: 'OD-002412005',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            },
+            {
+                orderId: 'OD-002412006',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Pending'
+            },
+            {
+                orderId: 'OD-002412007',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            },
+            {
+                orderId: 'OD-002412008',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Canceled'
+            },
+            {
+                orderId: 'OD-002412009',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            },
+            {
+                orderId: 'OD-002412010',
+                customerName: 'John Doe',
+                product: 'Apple Watch',
+                price: '$ 250',
+                status: 'Delivered'
+            }
+        ];
+
+        const tableTransactions = document.getElementById('table-transactions');
+        const tbody = tableTransactions.querySelector('tbody');
+        transactions.forEach(transaction => {
+            const tr = document.createElement('tr');
+            const colorStatus = transaction.status === 'Delivered' ? 'success' : transaction.status === 'Pending' ? 'warning' : 'danger';
+            tr.innerHTML = `
+                <td>
+                    <a href="#" class="text-primary">${transaction.orderId}</a>
+                </td>
+                <td>${transaction.customerName}</td>
+                <td>${transaction.product}</td>
+                <td>${transaction.price}</td>
+                <td class="text-center">
+                    <span class="badge bg-${colorStatus}">${transaction.status}</span>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    </script>
+</body>
+
+</html>
