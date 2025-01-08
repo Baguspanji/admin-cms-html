@@ -26,6 +26,7 @@ body {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 h1,
@@ -55,6 +56,10 @@ button {
     background-color: transparent;
 }
 
+.hide {
+    display: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -65,9 +70,10 @@ button {
 
 .sidebar {
     margin: 10px 0px 10px 10px;
+    width: 240px;
     height: calc(100vh - 20px);
     border-radius: var(--bs-border-radius-card);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -77,16 +83,13 @@ button {
     transition: 0.5s all ease-out;
 }
 
-.sidebar:not(.sidebar-mini) {
-    width: 240px;
-}
-
-.sidebar.sidebar-mini {
-    width: 70px;
-}
-
 .sidebar:hover {
     box-shadow: none;
+}
+
+.sidebar.sidebar-hide {
+    width: 0;
+    opacity: 0;
 }
 
 .sidebar .sidebar-header {
@@ -96,37 +99,26 @@ button {
     justify-content: space-between;
 }
 
-.sidebar.sidebar-mini .sidebar-header .sidebar-brand {
-    width: 0;
-    opacity: 0;
-}
-
 .sidebar .sidebar-header .sidebar-brand img {
     width: 75%;
 }
 
-.sidebar .sidebar-header .sidebar-brand-mini {
-    display: flex;
-    align-items: center;
-    justify-content: start;
+.sidebar .sidebar-header .sidebar-toggle-side {
+    color: var(--default-text-color);
 }
 
-.sidebar .sidebar-header .sidebar-brand-mini img {
-    width: 75%;
+@media (max-width: 768px) {
+    .sidebar .sidebar-header .sidebar-toggle-side {
+        display: block;
+    }
 }
 
-.sidebar:not(.sidebar-mini) .sidebar-header .sidebar-brand-mini {
-    width: 0;
-    opacity: 0;
-}
-
-.sidebar .sidebar-header .sidebar-toggle {
-    font-size: 1.3rem;
+.sidebar .sidebar-header .sidebar-toggle-side.active {
     color: var(--primary);
 }
 
-.sidebar.sidebar-mini .sidebar-header .sidebar-toggle {
-    display: none;
+.sidebar .sidebar-header .sidebar-toggle-side i {
+    font-size: 1.6rem !important;
 }
 
 .sidebar .sidebar-menu {
@@ -161,11 +153,6 @@ button {
     transition: 0.5s all ease-out;
 }
 
-.sidebar.sidebar-mini .sidebar-menu .sidebar-link .sidebar-item span {
-    width: 0;
-    opacity: 0;
-}
-
 .sidebar .sidebar-menu .sidebar-link .sidebar-item.active {
     background-color: #f1f1f1;
     color: var(--default-text-color);
@@ -187,7 +174,7 @@ button {
     color: var(--default-text-color);
 }
 
-.sidebar:not(.sidebar-mini) .sidebar-menu .sidebar-link .sidebar-item.sub-item::after {
+.sidebar .sidebar-menu .sidebar-link .sidebar-item.sub-item::after {
     content: '\2b81';
     font-size: 0.6rem;
     font-weight: bold;
@@ -197,7 +184,7 @@ button {
     transition: 0.5s all ease-out;
 }
 
-.sidebar:not(.sidebar-mini) .sidebar-menu .sidebar-link .sidebar-item.sub-item:not(.collapsed)::after {
+.sidebar .sidebar-menu .sidebar-link .sidebar-item.sub-item:not(.collapsed)::after {
     transform: rotate(-90deg);
 }
 
@@ -235,20 +222,22 @@ button {
 }
 
 main {
-    padding: 11px 15px;
+    position: relative;
+    padding: 12px 15px;
     margin-left: 250px;
     transition: 0.5s all ease-out;
 }
 
-/* main when .sidebar.sidebar-mini */
-.sidebar.sidebar-mini+main {
-    margin-left: 70px;
+main.sidebar-hide {
+    margin-left: 0;
 }
 
-/* main when .sidebar.sidebar-mini */
-/* .sidebar+main {
-    margin-left: 250px;
-} */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+    }
+
+}
 
 /* Navbar */
 
@@ -279,13 +268,44 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
     gap: 2px;
+}
+
+.navbar .navbar-content .sidebar-toggle {
+    color: var(--primary);
+    border: var(--default-border-width) var(--default-border-style) var(--default-border-color);
+    border-radius: 8px;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .navbar-content .sidebar-toggle.active {
+    color: var(--default-text-color);
+}
+
+.navbar .navbar-content .sidebar-toggle i {
+    font-size: 1.4rem !important;
+}
+
+@media (max-width: 768px) {
+    .navbar .navbar-content .sidebar-toggle {
+        color: var(--default-text-color);
+    }
+    
+    .navbar .navbar-content .sidebar-toggle.active {
+        color: var(--primary);
+    }
 }
 
 .navbar .navbar-content .navbar-search {
     display: inline;
     width: 26rem;
-    margin-left: 8px;
+    margin-left: 4px;
 }
 
 .navbar .navbar-content .navbar-search .form-control {
@@ -321,6 +341,12 @@ main {
     padding: 4px;
     border-radius: 50%;
     border: var(--default-border-width) var(--default-border-style) #9aa6b272;
+}
+
+@media (max-width: 768px) {
+    #navbarSearch {
+        display: none;
+    }
 }
 
 .content {

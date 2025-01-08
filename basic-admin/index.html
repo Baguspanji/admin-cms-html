@@ -36,15 +36,11 @@
 </head>
 
 <body>
-    <!-- get sidebar.html -->
-    <!-- <div include-html="sidebar.html"></div> -->
-
     <!-- Start Sidebar -->
-    <div class="sidebar" id="sidebar" sidebar-mode-mini="false">
+    <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a href="#" class="sidebar-brand"><img src="assets/img/logo.svg" alt="Logo"></a>
-            <a href="#" class="sidebar-brand-mini"><img src="assets/img/logo-mini.svg" alt="Logo"></a>
-            <button type="button" class="sidebar-toggle" id="sidebar-toggle">
+            <button type="button" class="sidebar-toggle-side hide" id="sidebar-toggle-side">
                 <i class="ti ti-layout-sidebar-right-expand"></i>
             </button>
         </div>
@@ -108,15 +104,16 @@
     </div>
     <!-- End Sidebar -->
 
-    <main>
-        <!-- get navbar.html -->
-        <!-- <div include-html="navbar.html"></div> -->
-
+    <main id="main">
         <!-- Start Navbar -->
         <nav class="navbar navbar-expand-lg">
             <div class="navbar-content" id="navbarNav">
                 <div class="navbar-nav">
-                    <div class="navbar-search">
+                    <button type="button" class="sidebar-toggle" id="sidebar-toggle">
+                        <i class="ti ti-layout-sidebar-right-expand"></i>
+                    </button>
+
+                    <div class="navbar-search" id="navbarSearch">
                         <div class="custom-input-group">
                             <div class="input-group-prefix">
                                 <i class="ti ti-search"></i>
@@ -212,7 +209,7 @@
 
                 <!-- Content Card -->
                 <div class="col-md-12">
-                    <div class="row content-card">
+                    <div class="row content-card row-gap-2">
                         <div class="col-12 col-md-4 content-card-item">
                             <div class="card">
                                 <div class="card-body">
@@ -368,64 +365,66 @@
                                 </a>
                             </div>
 
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th>Order ID</th>
-                                        <th>Customer Name</th>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th class="text-center">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="text-primary">OD-002412001</a>
-                                        </td>
-                                        <td>John Doe</td>
-                                        <td>Apple Watch</td>
-                                        <td>$ 250</td>
-                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="text-primary">OD-002412002</a>
-                                        </td>
-                                        <td>John Doe</td>
-                                        <td>Apple Watch</td>
-                                        <td>$ 250</td>
-                                        <td class="text-center"><span class="badge bg-warning">Pending</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="text-primary">OD-002412003</a>
-                                        </td>
-                                        <td>John Doe</td>
-                                        <td>Apple Watch</td>
-                                        <td>$ 250</td>
-                                        <td class="text-center"><span class="badge bg-danger">Canceled</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="text-primary">OD-002412004</a>
-                                        </td>
-                                        <td>John Doe</td>
-                                        <td>Apple Watch</td>
-                                        <td>$ 250</td>
-                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#" class="text-primary">OD-002412005</a>
-                                        </td>
-                                        <td>John Doe</td>
-                                        <td>Apple Watch</td>
-                                        <td>$ 250</td>
-                                        <td class="text-center"><span class="badge bg-success">Delivered</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Order ID</th>
+                                            <th>Customer Name</th>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th class="text-center">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#" class="text-primary">OD-002412001</a>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Apple Watch</td>
+                                            <td>$ 250</td>
+                                            <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#" class="text-primary">OD-002412002</a>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Apple Watch</td>
+                                            <td>$ 250</td>
+                                            <td class="text-center"><span class="badge bg-warning">Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#" class="text-primary">OD-002412003</a>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Apple Watch</td>
+                                            <td>$ 250</td>
+                                            <td class="text-center"><span class="badge bg-danger">Canceled</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#" class="text-primary">OD-002412004</a>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Apple Watch</td>
+                                            <td>$ 250</td>
+                                            <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#" class="text-primary">OD-002412005</a>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Apple Watch</td>
+                                            <td>$ 250</td>
+                                            <td class="text-center"><span class="badge bg-success">Delivered</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
