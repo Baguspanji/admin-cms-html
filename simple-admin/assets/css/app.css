@@ -166,6 +166,7 @@ button {
     margin-left: -18px;
 }
 
+.sidebar .sidebar-menu .sidebar-subitem .sidebar-subitem-link.active,
 .sidebar .sidebar-menu .sidebar-subitem .sidebar-subitem-link:hover {
     background-color: #e9ecef;
     color: var(--default-text-color);
@@ -272,10 +273,6 @@ main {
     display: none !important;
 }
 
-.navbar .navbar-content .dropdown:hover .dropdown-menu {
-    display: block;
-}
-
 .navbar .navbar-content .dropdown .dropdown-menu {
     right: 0;
     left: auto;
@@ -301,6 +298,10 @@ main {
     padding: 4px;
     border-radius: 50%;
     border: var(--default-border-width) var(--default-border-style) #9aa6b272;
+}
+
+.navbar-content .dropdown-menu {
+    position: absolute;
 }
 
 .content {
@@ -648,7 +649,7 @@ main {
     padding: 0.215rem 0.75rem;
 }
 
-.custom-file{
+.custom-file {
     position: relative;
     width: 100%;
     height: 6rem;

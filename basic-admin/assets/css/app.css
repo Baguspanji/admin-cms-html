@@ -319,6 +319,7 @@ main.sidebar-hide {
 .navbar .navbar-content .dropdown .dropdown-menu {
     right: 0;
     left: auto;
+    position: absolute;
 }
 
 .navbar .navbar-content .notification-dropdown .dropdown-toggle {
